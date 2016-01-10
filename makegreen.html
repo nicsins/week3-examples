@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Make Green</title>
+</head>
+<body>
+
+<h1>The text on this page should be green</h1>
+
+<p>This text would look better green.</p>
+
+<p>This text would also look better green.</p>
+
+<button onclick="green()">Turn text green</button>
+
+
+<script>
+
+  function green() {
+
+    var allP = document.getElementsByTagName("p");
+
+    for (var p = 0 ; p < allP.length ; p++) {
+      allP[p].style.color="green";
+    }
+
+  }
+</script>
+
+</body>
+</html>

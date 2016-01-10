@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Make Purple</title>
+</head>
+<body>
+
+<h1>My Web Page</h1>
+<p>Here's some text</p>
+<h1>Another header</h1>
+<p>And some more text. Move the mouse over any header to see what happens to the text....</p>
+
+<script>
+
+    //This runs when the page loads.
+    var mouseOverColor = "purple";
+    var mouseLeftColor = "black";
+
+    //Get a list of all of the h1 elements.
+    var allHeaders = document.getElementsByTagName("h1");
+
+    //Set each to have a onmouseover listener which calls the changeColor function
+    //similar for onmouseout
+    for (var h = 0 ; h < allHeaders.length ; h++) {
+      allHeaders[h].onmouseover = changeColor;
+      allHeaders[h].onmouseout = revertColor;
+    }
+
+    //For every header, change the color
+    function changeColor() {
+      for (var p = 0 ; p < allHeaders.length ; p++) {
+        allHeaders[p].style.color = mouseOverColor;
+        allHeaders[p].style.fontStyle = "oblique";
+      }
+    }
+
+    //Same as previous function, but restore original
+    function revertColor() {
+      for (var p = 0 ; p < allHeaders.length ; p++) {
+        allHeaders[p].style.color = mouseLeftColor;
+        allHeaders[p].style.fontStyle = "normal";
+      }
+    }
+
+</script>
+
+</body>
+</html>
