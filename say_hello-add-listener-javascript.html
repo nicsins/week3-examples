@@ -16,18 +16,19 @@
 <script>
 
   //First argument is the event name, second argument is a function
-  document.getElementById("para").addEventListener("click", function() { alert("hello") });
-
-  //First argument is the event name, second argument is a function
   document.getElementById("list").addEventListener("click", sayHello);
 
   function sayHello() {
     alert("Hello");
   }
 
-  //Can add another listener to elements. Now the paragraph  has two listeners,
-  //for click and for mouseover
-  //Can you add a mouseout listener so it changes color when the mouse leaves?
+  //Add click listener to paragraph id = para
+  document.getElementById("para").addEventListener("click", function() { alert("hello") });
+
+  //Can add another listener to elements. Now the paragraph has two listeners,
+  //one listener for click, and one for mouseover
+  //todo Can you add a mouseout listener so it changes color again when the mouse leaves?
+
   document.getElementById("para").addEventListener("mouseover", turnPurple);
 
   function turnPurple() {
