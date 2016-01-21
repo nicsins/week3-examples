@@ -23,8 +23,8 @@
     //Set each to have a onmouseover listener which calls the changeColor function
     //similar for onmouseout
     for (var h = 0 ; h < allHeaders.length ; h++) {
-      allHeaders[h].onmouseover = changeColor;
-      allHeaders[h].onmouseout = revertColor;
+      allHeaders[h].addEventListener("mouseover", changeColor);
+      allHeaders[h].addEventListener("mouseout", revertColor);
     }
 
     //For every header, change the color
