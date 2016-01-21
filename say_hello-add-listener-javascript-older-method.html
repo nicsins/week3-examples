@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Say Hello</title>
+</head>
+<body>
+
+
+<p id="para">Say hello</p>
+
+<ul>
+  <li id="list">Say hello</li>
+</ul>
+
+<script>
+
+  //Older style. More universally recognized but can only add one
+  //listener to each element, so is more restrictive.
+  document.getElementById("para").onclick = function() {
+    alert("hello")
+  };
+
+
+  document.getElementById("list").onclick =  sayHello;
+
+  function sayHello() {
+    alert("Hello");
+  }
+
+
+</script>
+
+</body>
+</html>

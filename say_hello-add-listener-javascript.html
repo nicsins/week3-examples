@@ -13,7 +13,6 @@
   <li id="list">Say hello</li>
 </ul>
 
-
 <script>
 
   //First argument is the event name, second argument is a function
@@ -26,6 +25,14 @@
     alert("Hello");
   }
 
+  //Can add another listener to elements. Now the paragraph  has two listeners,
+  //for click and for mouseover
+  //Can you add a mouseout listener so it changes color when the mouse leaves?
+  document.getElementById("para").addEventListener("mouseover", turnPurple);
+
+  function turnPurple() {
+    this.style.color = "purple";
+  }
 
 </script>
 
