@@ -9,7 +9,7 @@
 <h1>My Web Page</h1>
 <p>Here's some text</p>
 <h1>Another header</h1>
-<p>And some more text. Move the mouse over any header to see what happens to the text....</p>
+<p>Move the mouse over any header to see what happens to the text....</p>
 
 <script>
 
@@ -20,7 +20,7 @@
     //Get a list of all of the h1 elements.
     var allHeaders = document.getElementsByTagName("h1");
 
-    //Set each to have a onmouseover listener which calls the changeColor function
+    //Add an onmouseover listener to each H!, which calls the changeColor function
     //similar for onmouseout
     for (var h = 0 ; h < allHeaders.length ; h++) {
       allHeaders[h].addEventListener("mouseover", changeColor);
@@ -46,4 +46,5 @@
 </script>
 
 </body>
+
 </html>

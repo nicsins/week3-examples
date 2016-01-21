@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Say Hello</title>
+</head>
+<body>
+
+
+<p id="para">Say hello</p>
+
+<ul>
+  <li id="list">Say hello</li>
+</ul>
+
+
+<script>
+
+  //First argument is the event name, second argument is a function
+  document.getElementById("para").addEventListener("click", function() { alert("hello") });
+
+  //First argument is the event name, second argument is a function
+  document.getElementById("list").addEventListener("click", sayHello);
+
+  function sayHello() {
+    alert("Hello");
+  }
+
+
+</script>
+
+</body>
+</html>
