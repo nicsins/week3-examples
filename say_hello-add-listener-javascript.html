@@ -6,34 +6,29 @@
 </head>
 <body>
 
-
 <p id="para">Say hello</p>
-
-<ul>
-  <li id="list">Say hello</li>
-</ul>
 
 <script>
 
-  //First argument is the event name, second argument is a function
-  document.getElementById("list").addEventListener("click", sayHello);
+  //Add click listener to paragraph id = para.
+  //first, get a reference to this element,
+  var p = document.getElementById("para");
 
-  function sayHello() {
-    alert("Hello");
-  }
-
-  //Add click listener to paragraph id = para
-  document.getElementById("para").addEventListener("click", function() { alert("hello") });
+  //And add an event listener to it.
+  p.addEventListener("click", function() { alert("hello") });
 
   //Can add another listener to elements. Now the paragraph has two listeners,
   //one listener for click, and one for mouseover
-  //todo Can you add a mouseout listener so it changes color again when the mouse leaves?
+  //todo Can you add a mouseout listener so it changes color (and other styles?) again when the mouse leaves?
 
-  document.getElementById("para").addEventListener("mouseover", turnPurple);
+  p.addEventListener("mouseover", turnPurple); //Function name, no brackets.
 
   function turnPurple() {
     this.style.color = "purple";
+    this.style.fontWeight = "bold";
+    this.style.fontStyle = "italic";    //Purple, bold and italic.
   }
+
 
 </script>
 
