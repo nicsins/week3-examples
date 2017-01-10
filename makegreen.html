@@ -6,26 +6,27 @@
 </head>
 <body>
 
-<h1>The text on this page should be green</h1>
+<h1>The paragraphs on this page should be green</h1>
 
-<p>This text would look better red.</p>
+<p>I'm a paragraph.</p>
+<p>I'm also a paragraph.</p>
 
-<p>This text would also look better red.</p>
-
-<button onclick="red()">Turn text red</button>
+<button onclick="green()">Turn text green</button>
 
 
 <script>
 
-  function red() {
+  function green() {
 
-    var allP = document.getElementsByTagName("p");
+    // Get an array of all the P elements
+    var allPara = document.getElementsByTagName("p");
 
-    for (var p = 0 ; p < allP.length ; p++) {
-      allP[p].style.fontSize="45px";
+    //Loop over the array, and set the style's color to green
+    for (var p = 0 ; p < allPara.length ; p++) {
+      allPara[p].style.color="green";
     }
-
   }
+
 </script>
 
 </body>

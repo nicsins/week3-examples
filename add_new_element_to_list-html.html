@@ -12,12 +12,9 @@
   <li>Another list item</li>
 </ul>
 
-<!-- No JavaScript in the HTML - this is better style -->
-<button id="add">Add items to this list</button>
+<button onclick="addToList()">Add items to this list</button>
 
 <script>
-
-  document.getElementById('add').addEventListener('click', addToList);
 
   var newItems = 1;
 

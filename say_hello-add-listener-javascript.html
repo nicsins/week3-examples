@@ -2,35 +2,30 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Say Hello</title>
+  <title>Add Listeners in JavaScript</title>
 </head>
+
 <body>
 
-<p id="para">Say hello</p>
+<p id="hello">Click here to say hello</p>
+<p id="bye">Click here to say goodbye</p>
 
 <script>
 
-  //Add click listener to paragraph id = para.
-  //first, get a reference to this element,
-  var p = document.getElementById("para");
+  // All in one line - can define functions in lines of code
+  document.getElementById("hello").addEventListener('click', function() {
+    alert("hello!")
+  });
 
-  //And add an event listener to it.
-  p.addEventListener("click", function() { alert("hello") });
+  // More readable style - define function separately
+  document.getElementById("bye").addEventListener('click', bye);
 
-  //Can add another listener to elements. Now the paragraph has two listeners,
-  //one listener for click, and one for mouseover
-  //todo Can you add a mouseout listener so it changes color (and other styles?) again when the mouse leaves?
-
-  p.addEventListener("mouseover", turnPurple); //Function name, no brackets.
-
-  function turnPurple() {
-    this.style.color = "purple";
-    this.style.fontWeight = "bold";
-    this.style.fontStyle = "italic";    //Purple, bold and italic.
+  function bye() {
+    alert("Goodbye, hope to see you again soon!");
   }
-
 
 </script>
 
 </body>
+
 </html>

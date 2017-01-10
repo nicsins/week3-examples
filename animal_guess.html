@@ -11,13 +11,15 @@
 <form>
   Enter number of legs of your animal has:
   <input type = "text" name = "legs" id="legs">
-  <button type="button" onclick="guess()">Let computer guess the animal</button>
+  <button id='guess' type="button">Let computer guess the animal</button>
 </form>
 
 <P id="computer_guess"></P>
 
 
 <script>
+
+  document.getElementById('guess').addEventListener('click', guess);
 
   function guess() {
 

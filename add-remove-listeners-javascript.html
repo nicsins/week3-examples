@@ -18,7 +18,8 @@
 <body>
 
 
-<button id="add_listeners">Add mouseover and mouseout and click listeners to the box below</button>
+<button id="add_mouse_listeners">Add mouseover and mouseout listeners to the box below</button>
+<button id="add_click_listeners">Add click listener to the box below</button>
 
 <div id="box">
   <p id="mouse_status"></p>
@@ -35,8 +36,13 @@
   var mouse_info = document.getElementById("mouse_status");
 
   //References to buttons, and add click listeners to buttons
-  var add_listeners_button = document.getElementById("add_listeners");
-  add_listeners_button.addEventListener("click", addAllListeners);
+  var add_mouse_listeners_button = document.getElementById("add_mouse_listeners");
+  //The click event for this button adds mouse listeners for the div box.
+  add_mouse_listeners_button.addEventListener("click", addMouseListeners);
+
+  var add_click_listeners_button = document.getElementById("add_click_listeners");
+  //The click event for this button adds click listeners for the div box.
+  add_click_listeners_button.addEventListener("click", addClickListeners);
 
   var remove_click_button = document.getElementById("rem_click_listener");
   remove_click_button.addEventListener("click", removeClickListener);
@@ -51,16 +57,19 @@
   //Add several listeners to one component.
   //Adding a listener that a component already has, has no effect.
 
-  function addAllListeners() {
+  function addClickListeners() {
     //Can add more than one listener for the same event.
     //Need to specify different functions for each of these click listeners.
     box.addEventListener("click", showClickMessage);
     box.addEventListener("click", styleClickMessage);
+  }
+
+  function addMouseListeners() {
     box.addEventListener("mouseover", showMouseOverMessage);
     box.addEventListener("mouseout", showMouseOutMessage);
   }
 
-  //Remove some listeners
+  //Remove some listeners - remove click listeners separately.
   function removeClickListener() {
     box.removeEventListener("click", showClickMessage);
     box.removeEventListener("click", styleClickMessage);
