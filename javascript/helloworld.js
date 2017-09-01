@@ -339,6 +339,33 @@ do_something(1, 2, 3);
 do_something(1, 2, 3, 4);
 
 
+var number_5 = 5;
+var string_5 = "5";
+
+// == double equals operator
+console.log(number_5 == string_5);  // True
+// Types are coerced and the string '5' is considered == equal to the number 5
+
+// === triple equals operator
+console.log(number_5 === string_5);  // False
+// False. Types are NOT coerced, the two operands must be the same type,
+// as well as the same value
+// The string '5' is NOT considered === equal to the number 5
+
+
+
+
+// == double equals operator
+console.log(number_5 != string_5);  // False
+/* Types are coerced and the string '5' is considered == equal to the number 5
+ So checking non-equality between '5' and 5 return false - they are not, not equal */
+
+// === triple equals operator
+console.log(number_5 !== string_5);  // True
+/* False. Types are NOT coerced, the two operands must be the same type,
+ as well as the same value
+ The string '5' is NOT considered === equal to the number 5 */
+
 
 
 
