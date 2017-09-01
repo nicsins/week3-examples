@@ -11,7 +11,7 @@
 <script>
 
   var width_para = document.getElementById("width");
-  width_of_window = window.innerWidth;
+  var width_of_window = window.innerWidth;
   width_para.innerHTML = "Width = " + width_of_window;
 
   // The element resize event is called onresize; or for the addEventListener, resize.
@@ -20,9 +20,16 @@
   window.addEventListener("resize", windowWasResized);
 
   function windowWasResized() {
+
     alert("You re-sized the window!");
     // In Chrome, you actually get two events when the window is re-sized,
     // so you'll see two alerts. This shouldn't affect the lab question.
+
+    width_para = document.getElementById("width");
+    width_of_window = window.innerWidth;
+    width_para.innerHTML = "Width = " + width_of_window;
+
+
   }
 
 
