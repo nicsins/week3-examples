@@ -8,7 +8,7 @@ var price = 123.45;
 var text = "hello world";
 var moreText = 'single quotes are ok too';
 
-//Can define variable, and then initalize later
+//Can define variable, and then initialize later
 var car;
 car = 'toyota';
 
@@ -54,25 +54,26 @@ console.log(stringLength, shout, whisper, whereIsW, whereIsZ,
 var inputValid = false;
 
 //Array variable (like a list in Python)
-var my_list = [5, 6, "cake", 1234.124, text];
+var my_array = [5, 6, "cake", 1234.124, text];
 
 //A simple object. More on this later
-var productQuantities = { "android":5, "iphone":3 };
+var productQuantities = { "android": 5, "iphone": 3 };
 
 console.log(quantity);
 console.log(price);
 console.log(text);
 console.log(inputValid);
 
-console.log(my_list);
-console.log(my_list[2]);
-console.log(my_list[-10]);   //non-existent indexes: these print "undefined"
-console.log(my_list[10]);
+console.log(my_array);
+console.log(my_array[2]);
+console.log(my_array[-10]);   //non-existent index: this prints "undefined"
+console.log(my_array[10]);    //non-existent index: this prints "undefined"
 
 console.log(productQuantities);
+
 //Two ways to access things in an object
-console.log(productQuantities.android);  // Dot notation
-console.log(productQuantities['android']); //or square brackets
+console.log(productQuantities.android);  // Dot notation, if you know the key
+console.log(productQuantities['android']); //or square brackets, if the key is from a variable
 
 
 
@@ -83,7 +84,7 @@ for ( var x = 0 ; x < 10 ; x++) {
 
 var letters = ['a', 'b', 'c'];
 
-//loop over a list
+//loop over an array
 for (var i = 0 ; i < letters.length ; i++) {
   console.log(letters[i]);
 }
@@ -117,7 +118,7 @@ while (number < maxVal) {
 /* Another way of looping over an array. A non-existent array
 element is "undefined" and JavaScript considers "undefined" = false.
 Anything that has a value is considered to be true (except the value false)
-What would happen if your list had 'false' or something that evaluated to undefined in it?
+What would happen if your array had 'false' or something that evaluated to undefined in it?
  */
 var animals = ["Buffalo", "Elephant", "Yak"];
 var a = 0;
@@ -136,7 +137,7 @@ while (animals[a]){
 
 var grade = 100;
 
-if (grade == 100) {
+if (grade === 100) {
   console.log("You aced the quiz!");
 }
 
@@ -152,7 +153,7 @@ if (orderQuantity < 0) {
 /* if else statements */
 var animal = "zebra";
 
-if (animal == "zebra") {
+if (animal === "zebra") {
   console.log("This animal is a zebra");
 } else {
   console.log("Not a zebra");
@@ -165,10 +166,10 @@ var cities = ["London", "Paris", "Berlin"];
 // array.indexOf(var) returns -1 if element not found
 //If "Minneapolis" not in our array, then add (push)
 //it to the end of the array
-if (cities.indexOf("Minneapolis") == -1) {
+if (cities.indexOf("Minneapolis") === -1) {
   cities.push("Minneapolis");
 } else {
-  console.log("Minneapolis is in the list of cities")
+  console.log("Minneapolis is in the array of cities")
 }
 
 console.log(cities);
@@ -179,7 +180,7 @@ console.log(cities);
 //used to check if two or more conditions are both true
 
 var itemPrice = 100;
-if (itemPrice == 100 && orderQuantity > 1) {
+if (itemPrice === 100 && orderQuantity > 1) {
   console.log("You have ordered at 1 or more $100 items");
 }
 
@@ -189,7 +190,7 @@ If at least one of these conditions are true, the whole expression is true
 var newCustomer = true;
 var haveEmail = false;
 
-if (newCustomer == true || haveEmail == false) {
+if (newCustomer === true || haveEmail === false) {
   console.log("Need to request customer's email")
 }
 
@@ -208,22 +209,22 @@ var legs = 4;    /* Pretend this is user input */
 if (legs < 0) {
   console.log("I don't think anything has a negative number of legs");
 }
-else if (legs % 2 != 0) {
+else if (legs % 2 !== 0) {
   console.log("An odd number of legs, are you sure?");
 }
-else if (legs == 0) {
+else if (legs === 0) {
   console.log("Is it a snake?");
 }
-else if (legs == 2) {
+else if (legs === 2) {
   console.log("A biped animal, such as a human?");
 }
-else if (legs == 4) {
+else if (legs === 4) {
   console.log("A quadruped, like a zebra?");
 }
-else if (legs == 6) {
+else if (legs === 6) {
   console.log("Probably an insect, like a bee?");
 }
-else if (legs == 8) {
+else if (legs === 8) {
   console.log("Possibly a spider?");
 }
 else if (legs > 8) {
@@ -297,20 +298,20 @@ function add(a, b) {
 }
 
 
-exampleList = ["Zebra", "Squid", "Cat"];
-exampleList2 = ["Owl", "Plankton", "Llama"];
+exampleArray = ["Plankton", "Squid", "Sea Sponge"];
+exampleArray2 = ["Owl", "Puffin", "Eagle"];
 
-console.log(containsOwl(exampleList));
-console.log(containsOwl(exampleList2));
+console.log(containsOwl(exampleArray));
+console.log(containsOwl(exampleArray2));
 
-/* A very specific function testing if a list contains "Owl"
+/* A very specific function testing if an array contains "Owl"
 in any case. How could you make this more generally useful? */
-function containsOwl(birdList) {
+function containsOwl(array) {
 
   var owl = "owl";
 
-  for (var i = 0; i < birdList.length ; i++) {
-    if (birdList[i].toLowerCase() == owl) {
+  for (var i = 0; i < array.length ; i++) {
+    if (array[i].toLowerCase() === owl) {
       return true;
     }
   }
@@ -355,12 +356,12 @@ console.log(number_5 === string_5);  // False
 
 
 
-// == double equals operator
+// != not equals operator
 console.log(number_5 != string_5);  // False
 /* Types are coerced and the string '5' is considered == equal to the number 5
  So checking non-equality between '5' and 5 return false - they are not, not equal */
 
-// === triple equals operator
+// !== not equals operator
 console.log(number_5 !== string_5);  // True
 /* False. Types are NOT coerced, the two operands must be the same type,
  as well as the same value
