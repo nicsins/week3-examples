@@ -7,19 +7,24 @@
 
 <body>
 
+<button id="add">Add items to this list</button>
+
+<h1>A list of items</h1>
+
+<!--Unordered list, empty when the page loads -->
+
 <ul id="my_list">
-  <li>A list item</li>
-  <li>Another list item</li>
 </ul>
 
-<!-- No JavaScript in the HTML - this is better style -->
-<button id="add">Add items to this list</button>
 
 <script>
 
+  // Find the add button, and add a click listener
   document.getElementById('add').addEventListener('click', addToList);
 
-  var newItems = 1;
+  // Keep track of how many elements
+  var newItemNumber = 1;
+
 
   function addToList() {
 
@@ -28,12 +33,15 @@
 
     //Make a new HTML element for this document, of type <li>
     var new_list_item = document.createElement("li");
-    //Configure properties of this element. innerHTML can be any valid HTML text.
-    new_list_item.innerHTML = "New item " + newItems;
-    // Count how many new items have been added
-    newItems++;
+
+    //Configure properties of this element. innerHTML can be any valid text or HTML.
+    new_list_item.innerHTML = "New item " + newItemNumber;
+
     //Add the new item to as a new child to the unordered list
     my_list_element.appendChild(new_list_item);
+
+    // Increase the count, for the next item
+    newItemNumber++;
 
   }
 

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+
+<body>
+
+<button id="log">Click this button to log a message to the console</button>
+
+<script>
+
+  document.getElementById("log").addEventListener("click", table);
+
+  function table() {
+
+    var vehicles = ['car', 'bus', 'truck', 'bicycle'];
+    console.table(vehicles);
+
+    var vehicle_colors = {
+      'car': 'blue',
+      'bus': 'red',
+      'truck': 'green',
+      'bicycle': 'yellow' };
+
+    console.table(vehicle_colors);
+
+  }
+
+</script>
+
+</body>
+
+</html>

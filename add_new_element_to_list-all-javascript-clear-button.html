@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>List</title>
+</head>
+
+<body>
+
+<P>Add up to 10 list items to the list.</p>
+
+<button id="add">Add items to this list</button>
+<button id="clear">Clear list</button>
+
+<h1>A list of items</h1>
+
+<!--Unordered list, empty when the page loads -->
+
+<ul id="my_list">
+</ul>
+
+
+<script>
+
+
+  // Find the add button, and add a click listener
+  document.getElementById('add').addEventListener('click', addToList);
+
+  // Add a click listener to the clear button
+  document.getElementById('clear').addEventListener('click', clearList);
+
+  // Keep track of how many elements
+  var newItemNumber = 1;
+
+  function addToList() {
+
+    if (newItemNumber <= 10) {
+
+      //Find the ul list by the id
+      var my_list_element = document.getElementById("my_list");
+
+      //Make a new HTML element for this document, of type <li>
+      var new_list_item = document.createElement("li");
+
+      //Configure properties of this element. innerHTML can be any valid text or HTML.
+      new_list_item.innerHTML = "New item " + newItemNumber;
+
+      //Add the new item to as a new child to the unordered list
+      my_list_element.appendChild(new_list_item);
+
+      // Increase the count, for the next item
+      newItemNumber++;
+
+    }
+
+  }
+
+
+  function clearList() {
+
+    var my_list_element = document.getElementById("my_list");
+    my_list_element.innerHTML = "";
+    newItemNumber = 1;
+
+  }
+
+</script>
+
+</body>
+
+</html>
+
+

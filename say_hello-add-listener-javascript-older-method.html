@@ -7,21 +7,39 @@
 
 <body>
 
-<p id="hello">Click here to say hello</p>
+<h1 id="hello">Click here to say hello</h1>
 
 <script>
 
-  //Older style of adding listeners. More universally recognized but can only add one
-  //listener to each element, so is more restrictive.
+  // Older style of adding listeners. More universally recognized but can
+  // only add one listener to each element, which may be a problem.
 
-  document.getElementById("hello").onclick = hello;
+  document.getElementById("hello").onclick = sayHello;
 
-  function hello() {
+  function sayHello() {
     alert("Hello!");
   }
 
 </script>
 
 </body>
+
+<!--document.getElementById("hello").onclick = function() {-->
+<!--alert("Hello!");-->
+<!--};-->
+<!--/*-->
+  <!--// You can also write the above code like this.-->
+  <!--// You can define the function separately.-->
+  <!--// This is better if you would need to call-->
+  <!--// the sayHello() function at another time.-->
+
+  <!--document.getElementById("hello").onclick = hello;-->
+
+  <!--function hello() {-->
+    <!--alert("Hello!");-->
+  <!--}-->
+
+  <!--*/-->
+
 
 </html>

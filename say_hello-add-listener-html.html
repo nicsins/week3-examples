@@ -5,23 +5,27 @@
   <title>Alert</title>
 </head>
 
-<body>
 
-<!--This is not the recommended way, except for ~very~ simple pages.
+<!--This is actually not the recommended way, except for ~very~ simple pages.
  Why? It puts your javascript in two places, the HTML and script.
  it would be better to have all scripting in one place -->
 
-<p onclick="sayHello()">Click on this text to see an alert</p>
+<body>
 
-<script>
+  <h1 onclick="sayHello()">Click on this text to see an alert</h1>
 
-  function sayHello() {
-    alert('hello');
-  }
+  <script>
 
-</script>
+    function sayHello() {
+      alert('hello');
+    }
+
+  </script>
 
 </body>
 
 </html>
+
+
+
 

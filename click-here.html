@@ -6,17 +6,18 @@
 </head>
 <body>
 
-  <h1 id="header" onclick="changeText()">Click here!</h1>
+<h1 id="header" onclick="changeText(this)">Click here!</h1>
 
-  <script>
+<script>
 
-    function changeText() {
-      document.getElementById("header").innerHTML = "You clicked this element";
-    }
+  function changeText(element) {
+    element.innerHTML = "You clicked this element";
+  }
 
-  </script>
+</script>
 
 </body>
 </html>
+
 
 

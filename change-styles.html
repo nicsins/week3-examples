@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Change Styles</title>
+</head>
+<body>
+
+<h1 id="plain-header">Click me to change my style</h1>
+
+<script>
+
+  document.getElementById('plain-header').addEventListener('click', function(){
+
+    this.style.color = 'magenta';
+    this.style.background = 'orange';
+    this.style.border = '4px green double';
+    this.style.height = '400px';
+    this.style.width = '400px';
+    this.style.margin = 'auto';
+    this.style.textAlign = 'center';  // Center horizontally
+    this.style.padding = '100px';
+    this.style.fontFamily = 'monospace';
+    //etc.
+
+    this.innerHTML = 'New styles applied!'
+
+  })
+
+
+</script>
+
+</body>
+
+</html>

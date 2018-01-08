@@ -91,10 +91,18 @@ console.log(quiz_scores);
 //Another array. Can mix types if needed
 var my_array = [5, 6, 'cake', 1234.124, text];
 
-console.log(my_array);
-console.log(my_array[2]);
+// Print whole array
+console.log(my_array);        // [ 5, 6, 'cake', 1234.124, 'hello world' ]
+
+// Read individual elements
+console.log(my_array[0]);     // Array indexes start at 0. This prints 5
+console.log(my_array[2]);     // Prints 'cake'
 console.log(my_array[-10]);   //non-existent index: this prints 'undefined'
 console.log(my_array[10]);    //non-existent index: this prints 'undefined'
+
+// Can modify elements by index
+my_array[2] = "pizza";
+console.log(my_array);       //  [ 5, 6, 'cake', 1234.124, 'hello world' ]
 
 
 /*** OBJECTS ***/
@@ -110,7 +118,8 @@ console.log(productQuantities['android']); //or square brackets, if the key is f
 
 /*** IF ELSE ***/
 
-// Note that == and != work for comparisons, but it's recommended to use === and !== instead
+// Note that == and != work for comparisons,
+// but it's recommended to use === and !== instead
 
 var grade = 100;
 
@@ -135,7 +144,6 @@ if (animal === 'zebra') {
 } else {
   console.log('Not a zebra');
 }
-
 
 
 var cities = ['London', 'Paris', 'Berlin'];
@@ -245,6 +253,11 @@ console.log(number_5 !== string_5);  // True
 //for loop, repeat a certain number of times
 for ( var x = 0 ; x < 10 ; x++) {
   console.log(x);
+}
+
+var name = "JavaScript";
+for (var letter = 0 ; letter < name.length ; letter++) {
+  console.log(name[letter]);   // Can refer to characters by string position
 }
 
 
