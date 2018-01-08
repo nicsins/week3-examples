@@ -20,14 +20,11 @@
 
 <script>
 
-  var mouseOverColor = "purple";
-  var mouseLeftColor = "black";
-
   //Get a list of all of the h1 elements.
   var allHeaders = document.getElementsByTagName("h1");
 
-  //Give each H1 a onmouseover listener which calls the changeColor function
-  //Same to add onmouseout, but call the revertColor function
+  //Give each H1 a mouseover listener which calls the changeColor function
+  //Same to add mouseout listener, but call the revertColor function
   for (var h = 0 ; h < allHeaders.length ; h++) {
     allHeaders[h].addEventListener("mouseover", changeColor);
     allHeaders[h].addEventListener("mouseout", revertColor);
@@ -35,15 +32,17 @@
 
   // Change the color and text style for the element
   function changeColor() {
-    this.style.color = mouseOverColor;
+    this.style.color = "purple";
     this.style.fontStyle = "oblique";
   }
 
   // Same as previous function, but restore original
   function revertColor() {
-    this.style.color = mouseLeftColor;
+    this.style.color = "black";
     this.style.fontStyle = "normal";
   }
+
+//  p.s. you can also do the same thing with a hover attribute in CSS
 
 </script>
 

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Bands and Movies</title>
+</head>
+<body>
+
+<H1>Bands and Movies</H1>
+
+<P>Last's semester's students liked these bands/artists and movies.</P>
+
+<button id="show-movies">Only show movies</button>
+<button id="show-bands">Only show bands</button>
+<button id="reset">Reset</button>
+
+<ul>
+  <li class="favorite band">David Bowie</li>
+  <li class="favorite movie">Superman</li>
+  <li class="favorite movie">Star Wars</li>
+  <li class="favorite movie">The Incredibles</li>
+  <li class="favorite band">Taylor Swift</li>
+  <li class="favorite band">Metallica</li>
+  <li class="favorite movie">Finding Nemo</li>
+</ul>
+
+
+<script>
+
+  document.getElementById('show-movies').addEventListener('click', onlyMovies);
+  document.getElementById('show-bands').addEventListener('click', onlyBands);
+  document.getElementById('reset').addEventListener('click', reset);
+
+  var bands = document.getElementsByClassName('band');
+  var movies = document.getElementsByClassName('movie');
+  var allFavorites = document.getElementsByClassName('favorite');
+
+  // Display everything
+  function reset() {
+    for (var f = 0 ; f < allFavorites.length ; f++) {
+      allFavorites[f].style.display = 'block';
+    }
+  }
+
+  function onlyMovies() {
+    for (var f = 0 ; f < allFavorites.length ; f++) {
+      allFavorites[f].style.display = 'none';
+    }
+    for (var f = 0 ; f < movies.length ; f++) {
+      movies[f].style.display = 'block';
+    }
+  }
+
+
+  function onlyBands() {
+    for (var f = 0 ; f < allFavorites.length ; f++) {
+      allFavorites[f].style.display = 'none';
+    }
+    for (var f = 0 ; f < bands.length ; f++) {
+      bands[f].style.display = 'block';
+    }
+  }
+
+
+
+</script>
+
+
+</body>
+</html>
