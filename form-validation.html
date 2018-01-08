@@ -9,18 +9,26 @@
 <form>
   <P>Please enter your name</P>
   <input type="text" id="username">
+  <input type="checkbox" id="sure">
   <button type="button" id="submit-user-name">Submit</button>
 </form>
 
-<p id="welcome_message"></p>
+<p id="welcome-message"></p>
 
 <script>
 
   document.getElementById('submit-user-name').addEventListener('click', welcomeUser);
 
   function welcomeUser() {
-    var name = document.getElementById("username").value;
-    document.getElementById("welcome_message").innerHTML = "Welcome, " + name + "!";
+    var name = document.getElementById('username').value;
+
+    var message = document.getElementById('welcome-message');
+
+    if (name.length < 2) {
+      message.innerHTML = 'Your name should be at least 2 letters long.';
+    } else {
+      message.innerHTML = 'Welcome, ' + name + '!';
+    }
   }
 
 
