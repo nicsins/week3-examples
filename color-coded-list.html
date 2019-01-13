@@ -3,6 +3,17 @@
 <head>
   <meta charset="UTF-8">
   <title>JavsScript Functions with Arguments</title>
+
+  <style>
+      .show {
+          color: green
+      }
+
+      .movie {
+          color: red;
+      }
+  </style>
+
 </head>
 <body>
 
@@ -10,16 +21,36 @@
 
 <p>Enter a TV show (or movie) you like.</p>
 <label for="show-name"></label><input id="show-name">
-<input type="checkbox"><label for="is-movie">Movie?</label>
-<button>Save to list</button>
+<input id="is-movie" type="checkbox"><label for="is-movie">Check this box if it is a movie?</label>
+<button id="save">Save to list</button>
 
-<ul>
+<ul id="list">
 
 </ul>
 
 <script>
 
 // Script goes here 
+
+/*
+
+Read the name of the TV show or movie from the list. 
+And, find out if the is-movie input checkbox is checked, 
+
+Create a new <li> element containing the name of the show, read from the input
+If the show is a TV show, add the class show
+If the show is a movie, add the class movie
+
+Add the new li element to the list
+Clear the input and un-check the checkbox
+
+Include some validation. Ignore any empty inputs
+And, show an alert message if the show is already in the list. 
+
+
+*/
+
+
 
 </script>
 
