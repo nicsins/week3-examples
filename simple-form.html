@@ -2,27 +2,22 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Title</title>
+  <title>Name Form</title>
 </head>
 <body>
 
-<form>
-  <P>Please enter your name</P>
-  <input type="text" id="username">
-  <button type="button" id="submit-user-name">Submit</button>
-</form>
+<p>Please enter your name</p>
+<input type="text" id="username">
+<button id="save-user-name">Save</button>
 
 <p id="welcome_message"></p>
 
 <script>
 
-  document.getElementById('submit-user-name').addEventListener('click', welcomeUser);
-
-  function welcomeUser() {
-    var name = document.getElementById("username").value;
-    document.getElementById("welcome_message").innerHTML = "Welcome, " + name + "!";
-  }
-
+  document.querySelector('#save-user-name').addEventListener('click', function() {
+    let name = document.querySelector("#username").value
+    document.querySelector("#welcome_message").innerHTML = `Welcome, ${name}!`
+  })
 
 </script>
 

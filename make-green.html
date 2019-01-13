@@ -17,21 +17,18 @@
 
 <script>
 
-  document.getE
+  let green_button = document.querySelector('#make_green')
 
-  var green_button = document.getElementById("make_green");
-  green_button.addEventListener("click", green);
-
-  function green() {
+  green_button.addEventListener("click", function green() {
 
     // Get an array of all the P elements
-    var allPara = document.getElementsByTagName("p");
+    let allPara = document.querySelectorAll('p');
 
     //Loop over the array, and set the style's color to green
-    for (var p = 0 ; p < allPara.length ; p++) {
-      allPara[p].style.color="lawngreen";
-    }
-  }
+    allPara.forEach(function(el) {
+      el.style.color = 'green'
+    })
+  })
 
 
 </script>

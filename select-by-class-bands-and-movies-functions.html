@@ -8,10 +8,11 @@
 
 <H1>Bands and Movies</H1>
 
-<P>Last's semester's students liked these bands/artists and movies.</P>
+<P>Last's semester's students liked these bands/artists, foods, and movies.</P>
 
 <button id="show-movies">Only show movies</button>
 <button id="show-bands">Only show bands</button>
+
 <button id="reset">Show all</button>
 
 <ul>
@@ -29,31 +30,40 @@
 
   let bands = document.querySelectorAll('.band');
   let movies = document.querySelectorAll('.movie');
+  
   let allFavorites = document.querySelectorAll('.favorite');
 
   document.querySelector('#show-movies').addEventListener('click', function() {
-    allFavorites.forEach(function(el) {
-      el.style.display = 'none'  // Hide everything
-    })    
-    movies.forEach(function(el) {
-      el.style.display = 'block'  // show bands
-    })
+    showOnlyFavorites(allFavorites, movies)
   })
 
   document.querySelector('#show-bands').addEventListener('click', function() {
-    allFavorites.forEach(function(el) {
-      el.style.display = 'none'  // Hide everything
-    })    
-    bands.forEach(function(el) {
-      el.style.display = 'block'  // show bands
-    })
+    showOnlyFavorites(allFavorites, bands)
   })
-  
+
   document.querySelector('#reset').addEventListener('click', function() {
-    allFavorites.forEach(function(el) {
-      el.style.display = 'block'
-    })
+    showAll(allFavorites)
   });
+
+
+  function showOnlyFavorites(all, typeOfFavorite) {
+  
+      // Hide everything 
+      all.forEach(function(el) {
+        el.style.display = 'none'
+      })
+
+      // Display the favorite items 
+      typeOfFavorite.forEach(function(el) {
+        el.style.display = 'block'
+      })
+    }
+    
+    function showAll(all) {
+      all.forEach(function(el) {
+        el.style.display = 'block'
+      })
+    }
 
 </script>
 

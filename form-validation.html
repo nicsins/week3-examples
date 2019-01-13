@@ -2,35 +2,28 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Title</title>
+  <title>Name Form</title>
 </head>
 <body>
 
-<form>
-  <P>Please enter your name</P>
-  <input type="text" id="username">
-  <input type="checkbox" id="sure">
-  <button type="button" id="submit-user-name">Submit</button>
-</form>
+<p>Please enter your name</p>
+<input type="text" id="username">
+<button id="save-user-name">Save</button>
 
-<p id="welcome-message"></p>
+<p id="welcome_message"></p>
 
 <script>
 
-  document.getElementById('submit-user-name').addEventListener('click', welcomeUser);
-
-  function welcomeUser() {
-    var name = document.getElementById('username').value;
-
-    var message = document.getElementById('welcome-message');
+  document.querySelector('#save-user-name').addEventListener('click', function() {
+    let name = document.querySelector("#username").value
+    let messageElement = document.querySelector("#welcome_message")
 
     if (name.length < 2) {
-      message.innerHTML = 'Your name should be at least 2 letters long.';
+      messageElement.innerHTML = 'Your name must be at least two letters'
     } else {
-      message.innerHTML = 'Welcome, ' + name + '!';
+      messageElement.innerHTML = `Welcome, ${name}!`
     }
-  }
-
+  })
 
 </script>
 

@@ -13,15 +13,13 @@
 
 <script>
 
-  var log_button = document.getElementById("log").addEventListener("click", log);
+  console.log('Hello from the script!')
 
-  function log() {
+  var log_button = document.querySelector("#log").addEventListener("click", function() {
     console.log('Hello world!');
-  }
+  });
 
-  var do_math_button = document.getElementById("math").addEventListener("click", doMath);
-
-  function doMath() {
+  var do_math_button = document.querySelector("#math").addEventListener("click", function() {
 
     //Add up some numbers. Can you spot the error?
 
@@ -37,10 +35,10 @@
 
     console.log(answer);
 
-    var answerSpan = document.getElementById("answer");
+    var answerSpan = document.querySelector("#answer");
     answerSpan.innerHTML = answer
 
-  }
+  })
 
 </script>
 

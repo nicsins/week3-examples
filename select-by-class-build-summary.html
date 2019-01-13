@@ -35,25 +35,21 @@
 
 <script>
 
-  // Array of all the elements with class = "language-name"
-  // Returns an array-like object that can be looped over
-  var languageNameSpans = document.getElementsByClassName('language-name');
+  // Array of all the elements with class="language-name"
+  var languageNameSpans = document.querySelectorAll('.language-name');
 
   // Find the language-list ul
-  var languageList = document.getElementById('language-list');
+  var languageList = document.querySelector('#language-list');
 
   // Extract all the language names from the span tags
   // For each span, make a li element in language-list
 
-  for (var i = 0 ; i < languageNameSpans.length; i++){
-
-    var span = languageNameSpans[i];
-    var name = span.innerHTML;
-    var listItem = document.createElement('li');
+  languageNameSpans.forEach(function(span) {
+    let name = span.innerHTML;
+    let listItem = document.createElement('li');
     listItem.innerHTML = name;
     languageList.appendChild(listItem);
-
-  }
+  })
 
 </script>
 

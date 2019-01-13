@@ -7,45 +7,35 @@
 
 <body>
 
-<button id="add">Add items to this list</button>
+  <button id="add">Add items to the list</button>
+  
+  <h1>A list of items</h1>
 
-<h1>A list of items</h1>
+  <!--Unordered list, empty when the page loads -->
+  <ul id="my_list">
+  </ul>
 
-<!--Unordered list, empty when the page loads -->
+  <script>
 
-<ul id="my_list">
-</ul>
+    // Keep track of how many elements have been added
+    let newItemNumber = 1
 
+    // Find the add button, and add a click listener
+    document.querySelector('#add').addEventListener('click', function() {
+      // Find the ul list by the id. Note the # in the selector
+      let my_list_element = document.querySelector("#my_list")
+      //Make a new HTML element for this document, of type <li>
+      var new_list_item = document.createElement("li")
+      // Configure properties of this element. innerHTML can be any text or HTML
+      // Format strings use backticks, and ${var} notation
+      new_list_item.innerHTML = `New item ${newItemNumber}` 
+      // Add the new item to as a new child to the unordered list
+      my_list_element.appendChild(new_list_item);
+      // Increase the count of items added, for the next item
+      newItemNumber++;
+    })
 
-<script>
-
-  // Find the add button, and add a click listener
-  document.getElementById('add').addEventListener('click', addToList);
-
-  // Keep track of how many elements
-  var newItemNumber = 1;
-
-
-  function addToList() {
-
-    //Find the ul list by the id
-    var my_list_element = document.getElementById("my_list");
-
-    //Make a new HTML element for this document, of type <li>
-    var new_list_item = document.createElement("li");
-
-    //Configure properties of this element. innerHTML can be any valid text or HTML.
-    new_list_item.innerHTML = "New item " + newItemNumber;
-
-    //Add the new item to as a new child to the unordered list
-    my_list_element.appendChild(new_list_item);
-
-    // Increase the count, for the next item
-    newItemNumber++;
-
-  }
-
-</script>
+  </script>
 
 </body>
 
