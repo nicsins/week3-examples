@@ -5,7 +5,7 @@
   <title>JavsScript Functions with Arguments</title>
 
   <style>
-      .show {
+      .tv-show {
           color: green
       }
 
@@ -34,23 +34,28 @@
 
 /*
 
-Read the name of the TV show or movie from the list. 
-And, find out if the is-movie input checkbox is checked, 
+This program is for creating a list of movies and TV shows.
 
-Create a new <li> element containing the name of the show, read from the input
-If the show is a TV show, add the class show
-If the show is a movie, add the class movie
+When the button is clicked, read the name of the TV show or movie from the input.
+And, find out if the is-movie input checkbox is checked.  
+You'll need to use the checked property, not the value property. https://www.w3schools.com/jsref/prop_checkbox_checked.asp 
 
-Add the new li element to the list
-Clear the input and un-check the checkbox
+Create a new <li> element containing the name of the show/movie, the value of the text input
+If the show is a TV show (the checkbox is unchecked), add the class tv-show
+If the show is a movie, (the checkbox is checked) add the class movie
+You can set the .className property of an element to set its class, https://www.w3schools.com/jsref/prop_html_classname.asp
 
-Include some validation. Ignore any empty inputs
-And, show an alert message if the show is already in the list. 
+Add the new li element to the list.
+Clear the input and un-check the checkbox.
 
+Notice that there is some CSS provided which applies one color to elements with 
+class movie, and a different color to tv-show. You may change the styles if you prefer.
+
+Finally, include some validation. Ignore any empty inputs.
+(Tricky part) And, show an alert message if the show/movie is already in the list. 
+Don't add the show/movie again.
 
 */
-
-
 
 </script>
 

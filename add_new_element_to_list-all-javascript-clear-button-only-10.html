@@ -23,6 +23,11 @@
 
     // Find the add button, and add a click listener
     document.querySelector('#add').addEventListener('click', function() {
+
+      if (newItemNumber >= 10) {
+        return   // Don't do anything if there are more than 10 items
+      }
+
       // Find the ul list by the id. Note the # in the selector
       let my_list_element = document.querySelector("#my-list")
       //Make a new HTML element for this document, of type <li>

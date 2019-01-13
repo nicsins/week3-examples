@@ -12,7 +12,7 @@
   <h1>A list of items</h1>
 
   <!--Unordered list, empty when the page loads -->
-  <ul id="my_list">
+  <ul id="my-list">
   </ul>
 
   <script>
@@ -23,7 +23,7 @@
     // Find the add button, and add a click listener
     document.querySelector('#add').addEventListener('click', function() {
       // Find the ul list by the id. Note the # in the selector
-      let my_list_element = document.querySelector("#my_list")
+      let my_list_element = document.querySelector("#my-list")
       //Make a new HTML element for this document, of type <li>
       var new_list_item = document.createElement("li")
       // Configure properties of this element. innerHTML can be any text or HTML
