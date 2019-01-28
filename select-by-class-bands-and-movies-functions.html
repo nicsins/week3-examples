@@ -34,36 +34,34 @@
   let allFavorites = document.querySelectorAll('.favorite');
 
   document.querySelector('#show-movies').addEventListener('click', function() {
-    showOnlyFavorites(allFavorites, movies)
+    hideAllListExcept(allFavorites, movies)
   })
 
   document.querySelector('#show-bands').addEventListener('click', function() {
-    showOnlyFavorites(allFavorites, bands)
+    hideAllListExcept(allFavorites, bands)
   })
 
   document.querySelector('#reset').addEventListener('click', function() {
-    showAll(allFavorites)
+    setDisplay(allFavorites, 'list-item')
   });
 
-
-  function showOnlyFavorites(all, typeOfFavorite) {
+  function hideAllListExcept(all, except) {
   
       // Hide everything 
-      all.forEach(function(el) {
-        el.style.display = 'none'
-      })
+      setDisplay(all, 'none')
 
       // Display the favorite items 
-      typeOfFavorite.forEach(function(el) {
-        el.style.display = 'block'
+      except.forEach(function(el) {
+        el.style.display = 'list-item'
       })
     }
     
-    function showAll(all) {
-      all.forEach(function(el) {
-        el.style.display = 'block'
-      })
-    }
+  // Change the display property of all the elements in the array
+  function setDisplay(elements, display) {
+    elements.forEach(function(el) {
+      el.style.display = display
+    })
+  }
 
 </script>
 
