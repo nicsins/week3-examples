@@ -38,7 +38,7 @@
   let allFavorites = document.querySelectorAll('.favorite');
 
   document.querySelector('#show-movies').addEventListener('click', function() {
-    showOnlyFavorites(allFavorites, movies)
+    hideAllListExcept(allFavorites, movies)
   })
 
   document.querySelector('#show-bands').addEventListener('click', function() {
